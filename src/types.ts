@@ -548,6 +548,9 @@ export type ReactGoogleChartProps = {
     chartWrapper: GoogleChartWrapper;
     google: GoogleViz;
   }) => void;
+  getControlWrappers?: (
+    controlWrapperList: any[]
+  ) => void;
   className?: string;
   style?: React.CSSProperties;
   formatters?: {

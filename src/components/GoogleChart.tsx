@@ -149,7 +149,8 @@ export class GoogleChart extends React.Component<Props, State> {
       chartWrapperParams,
       toolbarItems,
       getChartEditor,
-      getChartWrapper
+      getChartWrapper,
+      getControlWrappers
     } = this.props;
 
     const chartConfig = {
@@ -171,6 +172,14 @@ export class GoogleChart extends React.Component<Props, State> {
       googleChartWrapper,
       googleChartDashboard
     );
+
+    if (googleChartControls === null) {
+      getControlWrappers([]);
+    } else {
+      const controlWrapperList = googleChartControls.map(({ control }) => control);
+      getControlWrappers(controlWrapperList);
+    }
+
     if (toolbarItems !== null) {
       google.visualization.drawToolbar(
         this.toolbar_ref.current as HTMLDivElement,

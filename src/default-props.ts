@@ -28,6 +28,7 @@ export const chartDefaultProps = {
   legendToggle: false,
   chartActions: null as null | GoogleChartAction[],
   getChartWrapper: (chartWrapper: GoogleChartWrapper, google: GoogleViz) => {},
+  getControlWrappers: (controlWrapperList: any[]) => {},
   getChartEditor: null as
     | null
     | ((
